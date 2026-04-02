@@ -19,6 +19,10 @@ app.use("/users", userRoutes);
 app.use("/records", recordRoutes);
 app.use("/dashboard", dashboardRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Zorvyn Finance API is running...");
+});
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("DB connected");
